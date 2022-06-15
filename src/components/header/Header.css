@@ -1,0 +1,23 @@
+.nav {
+    display: flex;
+    justify-content: flex-end;
+
+    height: 10vh;
+    overflow: hidden;
+
+    margin: 0 2rem;
+    background-color: var(--primary-color-header);
+}
+
+.nav-ul {
+    display: flex;
+    justify-content: space-around;
+
+    list-style: none;
+    width: 50%;
+}
+
+.nav-ul__li {
+    cursor: pointer;
+    color: var(--primary-font-color);
+}
