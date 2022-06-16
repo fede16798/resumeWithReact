@@ -1,0 +1,50 @@
+.presentation-container {
+    height: 80vh;
+    background-color: var(--background-color-header);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.presentation-h1 {
+    margin: 0;
+    color: var(--main-color);
+    font-family: "Roboto", verdana;
+    letter-spacing: 1.4px;
+}
+
+.presentation-p {
+    color: var(--primary-font-color);
+    font-size: 1.4rem;
+    font-family: monospace;
+    border: 1px solid var(--primary-font-color);
+    width: 25%;
+    padding: .5rem;
+}
+
+.icons-container {
+    display: flex;
+    justify-content: space-between;
+
+    width: 10%;
+    margin-top: 2rem;
+}
+
+.icons-container__a {
+    text-decoration: none;
+}
+
+.icons-container__icon {
+    color: var(--primary-font-color);
+}
+
+.arrow {
+    margin-top: 15vh;
+    cursor: pointer;
+    transition: transform 1s;
+}
+
+.arrow:hover {
+    transform: scale(1.5);
+}
