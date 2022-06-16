@@ -12,14 +12,11 @@ const Presentation = () => {
       <Typewriter
         onInit={(typewriter)=> {
         typewriter
-        .typeString("< AMICO, FEDERICO MARTIN />")
+        .typeString("< AMICO, FEERICOMAIN />")
         .pauseFor(300)
-        .deleteChars(10)
-        .typeString(" MARTIN />")
+        .deleteChars(12)
+        .typeString("DERICO MARTIN />")
         .start();
-        }}
-        options = {{
-          loop: true,
         }}
       />
      </h1>
