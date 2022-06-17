@@ -1,13 +1,11 @@
 import './App.css';
 import './general-styles.css';
-import Header from './components/header/Header.js';
-import Presentation from './components/presentation/Presentation';
+import AppRouoter from './components/AppRouter.js';
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Presentation />
+      <AppRouoter />
     </div>
   );
 }
