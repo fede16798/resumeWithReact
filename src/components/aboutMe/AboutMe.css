@@ -1,0 +1,49 @@
+.about-section {
+    display: flex;
+    justify-content: space-around;
+
+    background-color: var(--background-color-presentation);
+    padding-top: 1rem;
+}
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    text-align: start;
+    width: 40vw;
+    color: var(--primary-font-color);
+    font-family:  'Roboto', 'verdana';
+}
+
+.about-container__h3 {
+    align-self: start;
+    position: relative;
+}
+
+.about-container__h3::after {
+    content: "";
+    position: absolute;
+    background-color: var(--main-color);
+    height: 3px;
+    width: 40%;
+    bottom: -7px;
+    left: 0
+}
+
+.button-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.button-section__download, .button-section__contact {
+    padding: 0.5rem 1rem;
+    border: 4px solid var(--main-color);
+    cursor: pointer;
+}
+
+.button-section__download {
+    background-color: var(--main-color);
+}
