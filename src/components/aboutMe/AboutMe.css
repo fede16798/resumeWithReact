@@ -4,10 +4,10 @@
 
     background-color: var(--background-color-presentation);
     padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 .img-container {
-    max-width: 40vw;
     max-width: 40vw;
     height: 100%;
     max-height: 370px;
@@ -16,9 +16,7 @@
 .img-container img{
     width: 100%;
     max-height: 370px;
-
 }
-
 
 
 .about-container {

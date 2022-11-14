@@ -1,0 +1,19 @@
+.skills-section {
+    display: flex;
+    
+    background-color: var(--background-color-skills);
+}
+
+.skills-ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+
+    width: 40vw;
+    font-size: 1.5rem;
+    color: var(--primary-font-color);
+}
+
+.skills-ul__li {
+    margin: 0.5rem 0;
+}
