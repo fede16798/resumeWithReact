@@ -30,7 +30,7 @@
 .nav-ul__li:after {
     content: "";
     position: absolute;
-    background-color: #ff3c78;
+    background-color: var(--main-color);
     height: 2px;
     width: 0;
     left: 0;
