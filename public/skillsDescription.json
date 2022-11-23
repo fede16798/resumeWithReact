@@ -1,0 +1,9 @@
+[ 
+    { "id": 0, "icon": "<FaReact />", "skill": "React" },
+    { "id": 1, "icon": "<idDiJavascript />", "skill": "Javascript" },
+    { "id": 2, "icon": "<FaJava />", "skill": "Java" },
+    { "id": 3, "icon": "<SiSpringboot />", "skill": "Spring boot" },
+    { "id": 4, "icon": "<FaPython />", "skill": "Python" },
+    { "id": 5, "icon": "<FaDocker />", "skill": "Docker" },
+    { "id": 6, "icon": "<SiMysql />", "skill": "SQL" }
+]
