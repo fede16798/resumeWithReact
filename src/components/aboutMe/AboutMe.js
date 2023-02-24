@@ -1,5 +1,5 @@
 import './AboutMe.css';
-import resumeImg from '../../assets/resume-image.jpg'
+import resumeImg from '../../assets/resume-image.jpg';
 
 const AboutMe = () => {
   return (

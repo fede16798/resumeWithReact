@@ -1,0 +1,5 @@
+[
+    {"id": 0, "project": "cryptoCurrencies", "image": "./src/assets/resume-image.jpg"},
+    {"id": 1, "project": "clone disney", "image": "./src/assets/resume-image.jpg"},
+    {"id": 2, "project": "galeria con grid", "image": "./src/assets/resume-image.jpg"}
+]
