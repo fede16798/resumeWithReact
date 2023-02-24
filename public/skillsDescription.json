@@ -1,9 +1,9 @@
 [ 
-    { "id": 0, "icon": "<FaReact />", "skill": "React" },
-    { "id": 1, "icon": "<idDiJavascript />", "skill": "Javascript" },
-    { "id": 2, "icon": "<FaJava />", "skill": "Java" },
-    { "id": 3, "icon": "<SiSpringboot />", "skill": "Spring boot" },
-    { "id": 4, "icon": "<FaPython />", "skill": "Python" },
-    { "id": 5, "icon": "<FaDocker />", "skill": "Docker" },
-    { "id": 6, "icon": "<SiMysql />", "skill": "SQL" }
+    { "id": 0, "icon": "<FaReact />", "skill": "React", "description": "I have adquired this ability in the college 0" },
+    { "id": 1, "icon": "<idDiJavascript />", "skill": "Javascript", "description": "I have adquired this ability in the college 1"},
+    { "id": 2, "icon": "<FaJava />", "skill": "Java", "description": "I have adquired this ability in the college 2" },
+    { "id": 3, "icon": "<SiSpringboot />", "skill": "Spring boot", "description": "I have adquired this ability in the college 3" },
+    { "id": 4, "icon": "<FaPython />", "skill": "Python", "description": "I have adquired this ability in the college 4" },
+    { "id": 5, "icon": "<FaDocker />", "skill": "Docker", "description": "I have adquired this ability in the college 5" },
+    { "id": 6, "icon": "<SiMysql />", "skill": "SQL", "description": "I have adquired this ability in the college 6" }
 ]

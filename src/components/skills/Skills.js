@@ -17,20 +17,20 @@ const Skills = () => {
     useEffect(() => {
         getSkills()
             .then(res => {
+                console.log("getSkilss")
                 setSkills(res.data)
-                setText(res.data.ski)
+                setText(res.data[0].description)
             })
             .catch(err => {
                 console.log("HUBO un error")
             })
     }, [setSkills])
 
-    const handleChange = ({ }) => {
+    const handleClick = ({ id }) => {
         getText() 
             .then( res => {
-                console.log(res);
-                setText(res.data.skill);
-                console.log(res.data.id)
+                console.log("id " + id)
+                setText(res.data[id].description);
             })
             .catch ( err => {
                 console.log("HUBO N  ERROR")
@@ -43,7 +43,13 @@ const Skills = () => {
                 {
                     skills.map((skill) => {
                         return (
-                            <SkillItem icon={skillsIcons[skill.id]} technology={skill.skill} handleChange={handleChange}/>
+                            <SkillItem
+                                key={skill.id}
+                                id={skill.id}
+                                icon={skillsIcons[skill.id]} 
+                                technology={skill.skill} 
+                                handleClick={handleClick}
+                            />
                         )
                     })
                 }
