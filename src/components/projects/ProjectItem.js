@@ -1,11 +1,12 @@
 import './Projects.css';
 import resumeImg from '../../assets/resume-image.jpg';
 
-
-const ProjectItem = () => {
+const ProjectItem = ({projectLink,   projectImage}) => {
     return (
         <div className='projectItem-container'>
-            <img src={resumeImg} className='projectItem-img' />
+            <a href={projectLink} target="_blank">
+                <img src={projectImage} className='projectItem-img' /> 
+            </a>
         </div>
     )
 }

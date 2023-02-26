@@ -17,7 +17,6 @@ const Skills = () => {
     useEffect(() => {
         getSkills()
             .then(res => {
-                console.log("getSkilss")
                 setSkills(res.data)
                 setText(res.data[0].description)
             })
@@ -29,7 +28,6 @@ const Skills = () => {
     const handleClick = ({ id }) => {
         getText() 
             .then( res => {
-                console.log("id " + id)
                 setText(res.data[id].description);
             })
             .catch ( err => {

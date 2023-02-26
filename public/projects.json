@@ -1,5 +1,9 @@
-[
-    {"id": 0, "project": "cryptoCurrencies", "image": "./src/assets/resume-image.jpg"},
-    {"id": 1, "project": "clone disney", "image": "./src/assets/resume-image.jpg"},
-    {"id": 2, "project": "galeria con grid", "image": "./src/assets/resume-image.jpg"}
-]
+{
+    "projects" : [
+        {"id": 0, "name": "cryptoCurrencies", "image": "./resume-image.jpg", "link": "https://www.google.com"},
+        {"id": 1, "project": "clone disney", "image": "./resume-image.jpg", "link": "https://www.twitter.com"},
+        {"id": 2, "project": "galeria con grid", "image": "./resume-image.jpg", "link": "https://www.facebook.com"},
+        {"id": 3, "project": "api REsts", "image": "./resume-image.jpg", "link": "https://www.facebook.com"},
+        {"id": 4, "project": "exttra", "image": "./resume-image.jpg", "link": "https://www.facebook.com"}
+    ]
+}
