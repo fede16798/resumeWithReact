@@ -1,0 +1,17 @@
+.footer-container {
+    display: flex;
+    justify-content: center;
+
+    background-color: var(--background-color-header );
+    padding: 2rem;
+}
+
+.footer-ul {
+    display: flex;
+    justify-content: space-evenly;
+
+    width: 40vw;
+    margin: 0;
+    list-style: none;
+    color: var(--primary-font-color);
+}

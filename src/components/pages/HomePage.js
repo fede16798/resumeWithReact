@@ -3,6 +3,7 @@ import Presentation from '../presentation/Presentation.js';
 import AboutMe from '../aboutMe/AboutMe.js';
 import Skills from '../skills/Skills.js';
 import Projects from '../projects/Project.js';
+import Footer from '../footer/Footer.js';
 
 const HomePage = () => {
 	return (
@@ -12,6 +13,7 @@ const HomePage = () => {
 			<AboutMe />
 			<Skills />
 			<Projects />
+			<Footer />
 		</>
 	)
 }
