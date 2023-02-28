@@ -88,3 +88,7 @@
 .button-section__contact:hover {
     background-color: var(--main-color);
 }
+
+.about-container__p {
+    white-space: 'pre-wrap';
+}
