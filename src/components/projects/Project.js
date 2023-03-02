@@ -42,8 +42,9 @@ const Project = () => {
                             <SwiperSlide key={project.id}> 
                                 <ProjectItem 
                                     className="project-projectItem" 
-                                    projectLink={project.link}
+                                    projectLink = {project.link}
                                     projectImage = {project.image}
+                                    projectName = {project.name}
                                 /> 
                             </SwiperSlide>
                         )
