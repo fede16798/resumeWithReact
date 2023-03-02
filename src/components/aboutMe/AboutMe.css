@@ -92,3 +92,8 @@
 .about-container__p {
     white-space: 'pre-wrap';
 }
+
+.button-section__a {
+    text-decoration: none;
+    color: var(--primary-font-color);
+}

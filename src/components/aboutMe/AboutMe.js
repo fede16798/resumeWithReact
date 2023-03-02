@@ -22,7 +22,7 @@ const AboutMe = () => {
         <section className='button-section'>
           <p className='button-section__download'>
             <span className='button-section__span'>
-              <a href="Amico, Federico - Curriculum Vitae.pdf" target="_blank"> Download CV </a>
+              <a href="./Amico,Federico-Resume.pdf" target="_blank" className='button-section__a'> Watch Resume </a>
             </span>
           </p>
           <p className='button-section__contact'><span className='button-section__span'>Contact me</span></p>
