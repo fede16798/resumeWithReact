@@ -49,6 +49,7 @@
     margin: 4rem;
     padding: 2rem;
     border: 5px solid var(--main-color);
+    width: 40vw;
 }
 
 .skills-section__p {

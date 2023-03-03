@@ -9,8 +9,7 @@
 
 .img-container {
     max-width: 40vw;
-    height: 100%;
-    max-height: 370px;
+    align-self: center;
 }
 
 .img-container img{
@@ -87,4 +86,13 @@
 
 .button-section__contact:hover {
     background-color: var(--main-color);
+}
+
+.about-container__p {
+    white-space: 'pre-wrap';
+}
+
+.button-section__a {
+    text-decoration: none;
+    color: var(--primary-font-color);
 }

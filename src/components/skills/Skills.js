@@ -53,10 +53,16 @@ const Skills = () => {
                 }
             </ul>
             <section className='skills-section'>
-                <p className='skills-section__p'> {text} </p>
+                <p className='skills-section__p'>
+                    {text.split('\n').map((line, index) => (
+                        <p key={index}>
+                            {line}
+                            <br />
+                        </p>
+                        ))}
+                </p>
             </section>
         </ div>
     )
 }
-
 export default Skills;

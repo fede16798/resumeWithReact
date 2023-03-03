@@ -1,9 +1,9 @@
 {
     "projects" : [
-        {"id": 0, "name": "cryptoCurrencies", "image": "./resume-image.jpg", "link": "https://www.google.com"},
-        {"id": 1, "project": "clone disney", "image": "./resume-image.jpg", "link": "https://www.twitter.com"},
-        {"id": 2, "project": "galeria con grid", "image": "./resume-image.jpg", "link": "https://www.facebook.com"},
-        {"id": 3, "project": "api REsts", "image": "./resume-image.jpg", "link": "https://www.facebook.com"},
-        {"id": 4, "project": "exttra", "image": "./resume-image.jpg", "link": "https://www.facebook.com"}
+        {"id": 0, "name": "Spring boot project", "image": "./resume-image.jpg", "link": "https://github.com/fede16798/BBVA-Spring-Squad3"},
+        {"id": 1, "name": "Movie repository", "image": "./resume-image.jpg", "link": "https://github.com/fede16798/ChallengeAlkemyReact"},
+        {"id": 2, "name": "Consuming Api", "image": "./resume-image.jpg", "link": "https://github.com/fede16798/consumingCryptocurrencyApi"},
+        {"id": 3, "name": "Api Rest Full", "image": "./resume-image.jpg", "link": "https://github.com/fede16798/apiRestFulSpringBoot"},
+        {"id": 4, "name": "Resume", "image": "./resume-image.jpg", "link": "https://github.com/fede16798/resumeWithReact"}
     ]
 }

@@ -34,7 +34,7 @@
 }
 
 .projectItem-container {
-    width: 10vw;
+    width: 13vw;
 }
 
 .projectItem-img {
@@ -43,9 +43,27 @@
     object-fit: cover;
     transition: transform 0.2s;
     cursor: pointer;
+    opacity: .6;
 }
 
-.projectItem-img:hover {
+.projectItem-span {
+    position: absolute;
+    width: 13vw;
+    top: 50%;
+    left: 0;
+    text-decoration: none;
+    color: var(--primary-font-color);
+    transition: transform 0.2s;
+    font-family: "Roboto", verdana;
+    letter-spacing: 1.8px;
+}
+
+.projectItem-a:hover .projectItem-img {
     transform: scale(1.1);
     z-index: 100;
+    opacity: .6;
+}
+
+.projectItem-a:hover .projectItem-span {
+    transform: scale(1.1);
 }
