@@ -1,10 +1,19 @@
+import { useState } from 'react';
+import Modal from '../modal/Modal.js';
 import './AboutMe.css';
 import resumeImg from '../../assets/resume-image.jpg';
 
 const AboutMe = () => {
   let aboutMeEnglish = "I am Federico, from Argentina. I have been working in the IT area since 2020, doing different things such as investigating, for example, what was the best Automation Test Application to implement in our job or why Jenkins should be implemented, also developing functionalities in my project.\nI consider myself a very proactive person who is always trying to improve his skills and overcome all difficulties. I believe I am an autodidact person because most of the knowledge that I have, I got them studying on my own. This is evidenced by my proficiency in English, which I learned through immersive study in Ireland.\nI studied at the ORT institute and I am continually acquiring new abilities doing courses such as Python programming or Cloud DevOps (a course where I learned how to work with AWS or Azure), besides taking the opportunity to do the courses that my job gave as development unit tests in Java with JUnit.\nMy ultimate goal is to work in a dynamic and innovative environment where I can apply my skills and knowledge to contribute to exciting projects.  Moreover, I value a healthy work-life balance and the flexibility to work remotely, while always ensuring I meet my job responsibilities and deliverables, always trying to add value to the final job.\nAlso, I have European citizenship. Do not hesitate to contact me if you are interested, your email or message is not a nuisance.";
 
+  const [showModal, setShowModal] = useState(false);
+
+  const handleClick = () => {
+    setShowModal(true);
+  }
+
   return (
+    <>
     <div className='about-section'>
       <section className='img-container'>
         <img src={resumeImg} alt='resume'/>
@@ -25,10 +34,22 @@ const AboutMe = () => {
               <a href="./Amico,Federico-Resume.pdf" target="_blank" className='button-section__a'> Watch Resume </a>
             </span>
           </p>
-          <p className='button-section__contact'><span className='button-section__span'>Contact me</span></p>
+          <p className='button-section__contact' onClick={handleClick}>
+            <span className='button-section__span'>Contact me</span>
+          </p>
         </section>
       </div>
     </div>
+
+    <Modal
+      title="Contact me!"
+      showModal={showModal}
+      setShowModal={setShowModal}
+    >
+      <p>ESTO ES UNA PRUEBA</p>
+    </Modal>
+
+    </>
   )
 }
 
