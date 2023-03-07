@@ -1,6 +1,6 @@
 import './Modal.css';
 
-const PopUp = ({ children, title, showModal, setShowModal }) => {
+const Modal = ({ children, title, showModal, setShowModal }) => {
     return (
         <>
             { showModal &&
@@ -20,4 +20,4 @@ const PopUp = ({ children, title, showModal, setShowModal }) => {
     );
 }
 
-export default PopUp;
+export default Modal;
