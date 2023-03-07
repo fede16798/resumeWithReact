@@ -9,15 +9,24 @@ const AboutMe = () => {
   const requiredError = 'The field is required';
 
 
-  const [showModal, setShowModal] = useState(true);
-  const { register, formState: {errors}, handleSubmit } = useForm();
+  const [showModal, setShowModal] = useState(false);
+  const { register, formState: {errors}, setValue, handleSubmit } = useForm();
 
   const onSubmit = ( data ) => {
-    console.log(data);
+    console.log(data);  
+    cleanForm();
   }
 
   const handleClick = () => {
     setShowModal(true);
+  }
+
+  const cleanForm = () => {
+    setShowModal(false);
+    setValue('name', '');
+    setValue('email', '');
+    setValue('subject', '');
+    setValue('message', '');
   }
 
   return (
@@ -52,59 +61,65 @@ const AboutMe = () => {
     <Modal
       title="Contact me!"
       showModal={showModal}
-      setShowModal={() => setShowModal()}
+      cleanForm={() => cleanForm()}
+      className='modal-form'
     >
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <section>
-          <label>Nombre</label>
-          <input type="text" {...register('name', {
-            required: true,
-            minLength: 3,
-            maxLength: 50
-          })}></input>
+      <form className='form-container' onSubmit={handleSubmit(onSubmit)}>
+        <section className='form-section'>
+          <label className='form-section__label'>Nombre</label>
+          <input className='form-section__input' type="text" {...register('name', {
+              required: true,
+              minLength: 3,
+              maxLength: 50
+            })}>
 
-          {errors.name?.type === 'required' && <p>{requiredError}</p>}
-          {(errors.name?.type === 'maxLength' || errors.name?.type === 'minLength' )&& <p>The length of the name field lenght must between 3 and 50</p>}
+          </input>
+        </section>
+
+        {errors.name?.type === 'required' && <p className='form-error'>{requiredError}</p>}
+        {(errors.name?.type === 'maxLength' || errors.name?.type === 'minLength' )&& <p className='form-error'>The length of the name field must between 3 and 50</p>}
         
+        <section className='form-section'>
+          <label className='form-section__label'>Email</label>
+          <input className='form-section__input' type="email" {...register('email', {
+              required: true,
+              pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/i,
+              minLength: 10,
+              maxLength: 60
+            })}>
+
+          </input>
         </section>
-        <section>
-          <label>Email</label>
-          <input type="email" {...register('email', {
-            required: true,
-            pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/i,
-            minLength: 10,
-            maxLength: 60
-          })}></input>
 
-          {errors.email?.type === 'required' && <p>{requiredError}</p>}
-          {errors.email?.type === 'pattern' && <p>The email format is not valid</p>}
-          {(errors.email?.type === 'maxLength' || errors.name?.type === 'minLength' )&& <p>The length of the email field lenght must between 10 and 60</p>}
+        {errors.email?.type === 'required' && <p className='form-error'>{requiredError}</p>}
+        {errors.email?.type === 'pattern' && <p className='form-error'>The email format is not valid</p>}
+        {(errors.email?.type === 'maxLength' || errors.name?.type === 'minLength' )&& <p className='form-error'>The length of the email field must between 10 and 60</p>}
 
+        <section className='form-section'>
+          <label className='form-section__label'>Subject</label>
+          <input className='form-section__input' type="text" {...register('subject', {
+              required: true,
+              minLength: 10
+            })}>
+          </input>
         </section>
-        <section>
-          <label>Subject</label>
-          <input type="text" {...register('subject', {
-            required: true,
-            minLength: 10
-          })}></input>
 
-          {errors.subject?.type === 'required' && <p>{requiredError}</p>}
-          {errors.subject?.type === 'minLength' && <p>The length of the subject field lenght must be 10 or more</p>}
+        {errors.subject?.type === 'required' && <p className='form-error'>{requiredError}</p>}
+        {errors.subject?.type === 'minLength' && <p className='form-error'>The length of the subject field must be 10 or more</p>}
 
+        <section className='form-section'>
+          <label className='form-section__label'>Message</label>
+          <textarea className='form-section__input form-section__textarea' type="message" {...register('message', {
+              required: true,
+              minLength: 15
+            })}>
+          </textarea>
         </section>
-        <section>
-          <label>Message</label>
-          <input type="message" {...register('message', {
-            required: true,
-            minLength: 15,
-            message: 'This field is required and the lenght must be 10 or more'
-          })}></input>
 
-          {errors.message?.type === 'required' && <p>{requiredError}</p>}
-          {errors.message?.type === 'minLength' && <p>The length of the subject field lenght must be 15 or more</p>}
+        {errors.message?.type === 'required' && <p className='form-error'>{requiredError}</p>}
+        {errors.message?.type === 'minLength' && <p className='form-error'>The length of the subject field must be 15 or more</p>}
 
-        </section>
-        <button type="submit"> Send Email! </button>
+        <button type="submit" className='form-button'> Send Email! </button>
       </form>
     
     </Modal>

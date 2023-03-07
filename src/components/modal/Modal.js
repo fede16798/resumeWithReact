@@ -1,6 +1,7 @@
 import './Modal.css';
+import CloseIcon from '@mui/icons-material/Close';
 
-const Modal = ({ children, title, showModal, setShowModal }) => {
+const Modal = ({ children, title, showModal, cleanForm }) => {
     return (
         <>
             { showModal &&
@@ -8,9 +9,9 @@ const Modal = ({ children, title, showModal, setShowModal }) => {
                     <div className='container-modal'>
                         <div className='container-modal__div'>
                             <p className='container-modal__p'>{title}</p>
-                            <button className='container-modal__button' onClick= {() => setShowModal(false)}>X</button>
+                            <CloseIcon className='container-modal__button' onClick= {() => cleanForm()}>X</CloseIcon>
                         </div>
-                        <div>
+                        <div className='container-modal__chidren'>
                             {children}
                         </div>
                     </div>

@@ -12,17 +12,20 @@
 }
 
 .container-modal {
-    width: 40vw;
+    width: 60vw;
     min-height: 30vh;
     background: #fff;
     position: relative;
     border-radius: 5px;
     box-shadow: rgba(100, 100, 111, .2) 0px 7px 29px 0px;
     padding: 20px;
+    background-color: var(--background-color-presentation);
+    color: var(--primary-font-color);
 
     display: flex;
     flex-direction: column;
     align-items: center;
+    z-index: 1000;
 }
 
 .container-modal__div {
@@ -31,8 +34,17 @@
     justify-content: space-between;
 
     width: 100%;
+    font-size: 1.3em;
+}
+
+.container-modal__button {
+    cursor: pointer;
 }
 
 .container-modal__p {
     align-self: flex-start;
+}
+
+.container-modal__chidren {
+    width: 100%;
 }
