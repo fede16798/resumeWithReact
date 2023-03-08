@@ -1,11 +1,23 @@
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100vw;
+    height: 10vh;
+    background-color: var(--background-color-header);
+}
+
+.header-section {
+    width: 15vw;
+}
+
 .nav {
     display: flex;
     justify-content: flex-end;
 
-    height: 10vh;
     overflow: hidden;
 
-    background-color: var(--background-color-header);
 }
 
 .nav-ul {

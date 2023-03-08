@@ -3,11 +3,13 @@ import { useForm } from 'react-hook-form';
 import Modal from '../modal/Modal.js';
 import './AboutMe.css';
 import resumeImg from '../../assets/resume-image.jpg';
+import { useTranslation } from 'react-i18next';
 
 const AboutMe = () => {
+  const [t,i18n] = useTranslation('aboutMe');
+
   let aboutMeEnglish = "I am Federico, from Argentina. I have been working in the IT area since 2020, doing different things such as investigating, for example, what was the best Automation Test Application to implement in our job or why Jenkins should be implemented, also developing functionalities in my project.\nI consider myself a very proactive person who is always trying to improve his skills and overcome all difficulties. I believe I am an autodidact person because most of the knowledge that I have, I got them studying on my own. This is evidenced by my proficiency in English, which I learned through immersive study in Ireland.\nI studied at the ORT institute and I am continually acquiring new abilities doing courses such as Python programming or Cloud DevOps (a course where I learned how to work with AWS or Azure), besides taking the opportunity to do the courses that my job gave as development unit tests in Java with JUnit.\nMy ultimate goal is to work in a dynamic and innovative environment where I can apply my skills and knowledge to contribute to exciting projects.  Moreover, I value a healthy work-life balance and the flexibility to work remotely, while always ensuring I meet my job responsibilities and deliverables, always trying to add value to the final job.\nAlso, I have European citizenship. Do not hesitate to contact me if you are interested, your email or message is not a nuisance.";
   const requiredError = 'The field is required';
-
 
   const [showModal, setShowModal] = useState(false);
   const { register, formState: {errors}, setValue, handleSubmit } = useForm();
@@ -36,9 +38,9 @@ const AboutMe = () => {
         <img src={resumeImg} alt='resume'/>
       </section>
       <div className='about-container'>
-        <h3 className='about-container__h3'>About Me</h3>
+        <h3 className='about-container__h3'>{t('about-me.title')}</h3>
         <p className='about-container__p'>
-          {aboutMeEnglish.split('\n').map((line, index) => (
+          {t('about-me.description').split('\n').map((line, index) => (
             <p key={index}>
               {line}
               <br />
@@ -48,25 +50,25 @@ const AboutMe = () => {
         <section className='button-section'>
           <p className='button-section__download'>
             <span className='button-section__span'>
-              <a href="./Amico,Federico-Resume.pdf" target="_blank" className='button-section__a'> Watch Resume </a>
+              <a href="./Amico,Federico-Resume.pdf" target="_blank" className='button-section__a'>{t('about-me.watch-resume')} </a>
             </span>
           </p>
           <p className='button-section__contact' onClick={handleClick}>
-            <span className='button-section__span'>Contact me</span>
+            <span className='button-section__span'>{t('about-me.contact')}</span>
           </p>
         </section>
       </div>
     </div>
 
     <Modal
-      title="Contact me!"
+      title={t('modal.title')}
       showModal={showModal}
       cleanForm={() => cleanForm()}
       className='modal-form'
     >
       <form className='form-container' onSubmit={handleSubmit(onSubmit)}>
         <section className='form-section'>
-          <label className='form-section__label'>Nombre</label>
+          <label className='form-section__label'>{t('modal.name')}</label>
           <input className='form-section__input' type="text" {...register('name', {
               required: true,
               minLength: 3,
@@ -80,7 +82,7 @@ const AboutMe = () => {
         {(errors.name?.type === 'maxLength' || errors.name?.type === 'minLength' )&& <p className='form-error'>The length of the name field must between 3 and 50</p>}
         
         <section className='form-section'>
-          <label className='form-section__label'>Email</label>
+          <label className='form-section__label'>{t('modal.email')}</label>
           <input className='form-section__input' type="email" {...register('email', {
               required: true,
               pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/i,
@@ -96,7 +98,7 @@ const AboutMe = () => {
         {(errors.email?.type === 'maxLength' || errors.name?.type === 'minLength' )&& <p className='form-error'>The length of the email field must between 10 and 60</p>}
 
         <section className='form-section'>
-          <label className='form-section__label'>Subject</label>
+          <label className='form-section__label'>{t('modal.subject')}</label>
           <input className='form-section__input' type="text" {...register('subject', {
               required: true,
               minLength: 10
@@ -108,7 +110,7 @@ const AboutMe = () => {
         {errors.subject?.type === 'minLength' && <p className='form-error'>The length of the subject field must be 10 or more</p>}
 
         <section className='form-section'>
-          <label className='form-section__label'>Message</label>
+          <label className='form-section__label'>{t('modal.message')}</label>
           <textarea className='form-section__input form-section__textarea' type="message" {...register('message', {
               required: true,
               minLength: 15
@@ -119,7 +121,7 @@ const AboutMe = () => {
         {errors.message?.type === 'required' && <p className='form-error'>{requiredError}</p>}
         {errors.message?.type === 'minLength' && <p className='form-error'>The length of the subject field must be 15 or more</p>}
 
-        <button type="submit" className='form-button'> Send Email! </button>
+        <button type="submit" className='form-button'>{t('modal.send-email')}</button>
       </form>
     
     </Modal>
