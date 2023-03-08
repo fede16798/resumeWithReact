@@ -132,6 +132,7 @@
 .form-section__textarea {
     height: 6rem;
     resize: vertical;
+    max-height: 50vh;
 }
 
 .form-button {
