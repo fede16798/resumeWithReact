@@ -3,6 +3,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import ArrowDropDownRoundedIcon from '@mui/icons-material/ArrowDropDownRounded';
 import Typewriter from "typewriter-effect";
+import { Link } from 'react-scroll';
 
 const Presentation = () => {
 
@@ -29,7 +30,10 @@ const Presentation = () => {
             <GitHubIcon sx={{fontSize: 47}} className='icons-container__icon' /> 
           </a>
       </div>
-      <ArrowDropDownRoundedIcon sx={{fontSize: 70}} className='icons-container__icon arrow'/>
+      <Link to="about-me"
+          smooth={true} >
+        <ArrowDropDownRoundedIcon sx={{fontSize: 70}} className='icons-container__icon arrow'/>
+      </Link>
     </div>
   )
 }
