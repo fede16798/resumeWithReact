@@ -31,12 +31,12 @@ const Skills = () => {
                 setText(res.data[id].description);
             })
             .catch ( err => {
-                console.log("HUBO N  ERROR")
+                console.log("HUBO UN ERROR")
             })
     }
 
     return (
-        <div className="skills-container">
+        <div className="skills-container" id="skills">
             <ul className="skills-ul">
                 {
                     skills.map((skill) => {

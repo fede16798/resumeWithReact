@@ -24,7 +24,7 @@ const Project = () => {
 
 
     return (
-        <div className="project-container">
+        <div className="project-container" id="projects">
             <p className='project-p'>Projects</p>
             
                 <Swiper

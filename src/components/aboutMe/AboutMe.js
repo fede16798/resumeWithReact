@@ -31,7 +31,7 @@ const AboutMe = () => {
 
   return (
     <>
-    <div className='about-section'>
+    <div className='about-section' id="about-me">
       <section className='img-container'>
         <img src={resumeImg} alt='resume'/>
       </section>
