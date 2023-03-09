@@ -1,7 +1,7 @@
 {
     "about-me": {
         "title": "Sobre Mi",
-        "description": "ESPAÑOL CAMBIAR: I am Federico, from Argentina. I have been working in the IT area since 2020, doing different things such as investigating, for example, what was the best Automation Test Application to implement in our job or why Jenkins should be implemented, also developing functionalities in my project.\nI consider myself a very proactive person who is always trying to improve his skills and overcome all difficulties. I believe I am an autodidact person because most of the knowledge that I have, I got them studying on my own. This is evidenced by my proficiency in English, which I learned through immersive study in Ireland.\nI studied at the ORT institute and I am continually acquiring new abilities doing courses such as Python programming or Cloud DevOps (a course where I learned how to work with AWS or Azure), besides taking the opportunity to do the courses that my job gave as development unit tests in Java with JUnit.\nMy ultimate goal is to work in a dynamic and innovative environment where I can apply my skills and knowledge to contribute to exciting projects.  Moreover, I value a healthy work-life balance and the flexibility to work remotely, while always ensuring I meet my job responsibilities and deliverables, always trying to add value to the final job.\nAlso, I have European citizenship. Do not hesitate to contact me if you are interested, your email or message is not a nuisance.",
+        "description": "Hola, soy Federico, de Argentina. He estado trabajando en el área de sistemas desde el 2020, haciendo diferentes tipo de cosas como investigación, por ejemplo, cuál era la mejor aplicación de Automatización de Tests para implementar en nuestro trabajo o por qué Jenkins debía ser implementado, también desarrollé funcionalidades en el proyecto.\nMe considero una persona muy proactiva que siempre está tratanto de mejorar mis habilidades y superando todas las dificultades. Considero que soy una persona autodidacta ya que, la mayoría de mis conocimientos los obtuve estudiando por mi cuenta. Una evidencia de esto es mi Inglés, el cuál aprendí viviendo en Irlanda.\nEstudié en el Instituo ORT y estoy, continuamente, adquiriendo nuevas habilidades, haciedo cursos como Python programming o Cloud DevOps (donde aprendí como trabajar con AWS o Azure), además aprovechando la oportunidad de hacer cursos que son prvistos por mi trabajo, como desarrollo de test unitarios en Java con JUnit.\nMi objectivo es trabajar en un ambiente dinámico e innovador donde pueda aplicar mis habilidades y conocimientos para contribuir a proyectos emocionantes. Además, valoro un balance saludable entre el trabajo y la vida, donde pueda tener la flexibilidad de trabajar remoto, siempre asegurando el compromiso de mi trabajo, tratando de agregar valor al trabajo final.\nPor último, cuento con ciudadanía europea. No dude en contactarme si está interesado, su mail o mensaje no es una molestia.",
         "watch-resume": "Mi Curriculum Vitae",
         "contact": "Contáctame"
     },
@@ -12,6 +12,10 @@
         "email": "Mail",
         "subject": "Asunto",
         "message": "Mensaje",
-        "send-email": "Enviar Mail"
+        "send-email": "Enviar Mail",
+        "error-required": "El campo es requerido",
+        "invalid-format": "El formato del mail no es válido",
+        "invalid-lenght": "El tamaño del campo {{field}} debe estar entre {{minumin}} y {{maximun}}",
+        "invalid-minimun-lenght": "El tamaño del campo {{field}} debe ser {{minimun}} o más"
     }
 }

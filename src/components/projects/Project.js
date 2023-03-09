@@ -7,9 +7,11 @@ import { Pagination } from "swiper";
 import 'swiper/css';
 
 import { getProjects } from '../../services/Projects.service';
+import { useTranslation } from 'react-i18next';
+
 
 const Project = () => {
-
+    const [t,i18n] = useTranslation('project');
     const [projects, setProjects] =  useState([]);
 
     useEffect(() => {
@@ -25,7 +27,7 @@ const Project = () => {
 
     return (
         <div className="project-container" id="projects">
-            <p className='project-p'>Projects</p>
+            <p className='project-p'>{t('project.title')}</p>
             
                 <Swiper
                     slidesPerView={5}

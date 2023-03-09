@@ -1,0 +1,10 @@
+{
+    "project": {
+        "title": "Proyectos",
+        "spring-boot-project": "Proyecto Spring boot",
+        "movie-repository": "Biblioteca de películas",
+        "consuming-api": "Consumo de Api",
+        "api-rest-full": "Api Rest Full",
+        "resume": "Currículum Vitae"
+    }
+}

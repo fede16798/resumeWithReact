@@ -9,10 +9,13 @@ import i18next from 'i18next';
 import header_es from './translations/es/header.json';
 import presentation_es from './translations/es/presentation.json';
 import aboutMe_es from './translations/es/aboutMe.json';
+import project_es from './translations/es/project.json';
+
 //import all english texts
 import header_en from './translations/en/header.json';
 import presentation_en from './translations/en/presentation.json';
 import aboutMe_en from './translations/en/aboutMe.json';
+import project_en from './translations/en/project.json';
 
 i18next.init({
   interpolation: { escapeValue: false},
@@ -21,12 +24,14 @@ i18next.init({
     es: {
       header: header_es,
       presentation: presentation_es,
-      aboutMe: aboutMe_es
+      aboutMe: aboutMe_es,
+      project: project_es
     },
     en: {
       header: header_en,
       presentation: presentation_en,
-      aboutMe: aboutMe_en
+      aboutMe: aboutMe_en,
+      project: project_en
     }
   }
 })

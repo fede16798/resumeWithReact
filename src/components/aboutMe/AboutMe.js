@@ -8,9 +8,6 @@ import { useTranslation } from 'react-i18next';
 const AboutMe = () => {
   const [t,i18n] = useTranslation('aboutMe');
 
-  let aboutMeEnglish = "I am Federico, from Argentina. I have been working in the IT area since 2020, doing different things such as investigating, for example, what was the best Automation Test Application to implement in our job or why Jenkins should be implemented, also developing functionalities in my project.\nI consider myself a very proactive person who is always trying to improve his skills and overcome all difficulties. I believe I am an autodidact person because most of the knowledge that I have, I got them studying on my own. This is evidenced by my proficiency in English, which I learned through immersive study in Ireland.\nI studied at the ORT institute and I am continually acquiring new abilities doing courses such as Python programming or Cloud DevOps (a course where I learned how to work with AWS or Azure), besides taking the opportunity to do the courses that my job gave as development unit tests in Java with JUnit.\nMy ultimate goal is to work in a dynamic and innovative environment where I can apply my skills and knowledge to contribute to exciting projects.  Moreover, I value a healthy work-life balance and the flexibility to work remotely, while always ensuring I meet my job responsibilities and deliverables, always trying to add value to the final job.\nAlso, I have European citizenship. Do not hesitate to contact me if you are interested, your email or message is not a nuisance.";
-  const requiredError = 'The field is required';
-
   const [showModal, setShowModal] = useState(false);
   const { register, formState: {errors}, setValue, handleSubmit } = useForm();
 
@@ -78,8 +75,8 @@ const AboutMe = () => {
           </input>
         </section>
 
-        {errors.name?.type === 'required' && <p className='form-error'>{requiredError}</p>}
-        {(errors.name?.type === 'maxLength' || errors.name?.type === 'minLength' )&& <p className='form-error'>The length of the name field must between 3 and 50</p>}
+        {errors.name?.type === 'required' && <p className='form-error'>{t('modal.error-required')}</p>}
+        {(errors.name?.type === 'maxLength' || errors.name?.type === 'minLength' )&& <p className='form-error'>{t('modal.invalid-lenght', {field: 'name', minimun: '3', maximun: '50'})}</p>}
         
         <section className='form-section'>
           <label className='form-section__label'>{t('modal.email')}</label>
@@ -93,9 +90,9 @@ const AboutMe = () => {
           </input>
         </section>
 
-        {errors.email?.type === 'required' && <p className='form-error'>{requiredError}</p>}
-        {errors.email?.type === 'pattern' && <p className='form-error'>The email format is not valid</p>}
-        {(errors.email?.type === 'maxLength' || errors.name?.type === 'minLength' )&& <p className='form-error'>The length of the email field must between 10 and 60</p>}
+        {errors.email?.type === 'required' && <p className='form-error'>{t('modal.error-required')}</p>}
+        {errors.email?.type === 'pattern' && <p className='form-error'>{t('modal.invalid-format')}</p>}
+        {(errors.email?.type === 'maxLength' || errors.name?.type === 'minLength' )&& <p className='form-error'>{t('modal.invalid-lenght', {field: 'email', minimun: '10', maximun: '60'})}</p>}
 
         <section className='form-section'>
           <label className='form-section__label'>{t('modal.subject')}</label>
@@ -106,8 +103,8 @@ const AboutMe = () => {
           </input>
         </section>
 
-        {errors.subject?.type === 'required' && <p className='form-error'>{requiredError}</p>}
-        {errors.subject?.type === 'minLength' && <p className='form-error'>The length of the subject field must be 10 or more</p>}
+        {errors.subject?.type === 'required' && <p className='form-error'>{t('modal.error-required')}</p>}
+        {errors.subject?.type === 'minLength' && <p className='form-error'>{t('modal.invalid-minimun-lenght', {field: 'email', minimun: '10'})}</p>}
 
         <section className='form-section'>
           <label className='form-section__label'>{t('modal.message')}</label>
@@ -118,8 +115,8 @@ const AboutMe = () => {
           </textarea>
         </section>
 
-        {errors.message?.type === 'required' && <p className='form-error'>{requiredError}</p>}
-        {errors.message?.type === 'minLength' && <p className='form-error'>The length of the subject field must be 15 or more</p>}
+        {errors.message?.type === 'required' && <p className='form-error'>{t('modal.error-required')}</p>}
+        {errors.message?.type === 'minLength' && <p className='form-error'>{t('modal.invalid-minimun-lenght', {field: 'email', minimun: '15'})}</p>}
 
         <button type="submit" className='form-button'>{t('modal.send-email')}</button>
       </form>

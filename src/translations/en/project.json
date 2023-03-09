@@ -1,0 +1,10 @@
+{
+    "project": {
+        "title": "Projects",
+        "spring-boot-project": "Spring boot project",
+        "movie-repository": "Movie repository",
+        "consuming-api": "Consuming Api",
+        "api-rest-full": "Api Rest Full",
+        "resume": "Resume"
+    }
+}
