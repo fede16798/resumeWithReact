@@ -1,7 +1,11 @@
 import axios from 'axios';
 
 const getProjects = async (language) => {
-    return (language == "en") ? await axios.get('./projectsEnsss.json'): await axios.get('./projectsEs.json');
+    if (language == 'en') {
+        return await axios.get('./projectsEn.json');
+    } else {
+        return await axios.get('./projectsEs.json');
+    }
 }
 
 export {getProjects};

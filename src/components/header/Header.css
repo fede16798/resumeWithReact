@@ -9,7 +9,22 @@
 }
 
 .header-section {
-    width: 15vw;
+    width: 10vw;
+    display: flex;
+    justify-content: center;
+    margin-left: 2rem;
+}
+
+.header-section__button {
+    background: none;
+    border: none;
+    padding: 0;
+
+}
+
+.header-section__img {
+    cursor: pointer;
+    width: 60%;
 }
 
 .nav {
