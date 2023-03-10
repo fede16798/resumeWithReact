@@ -11,23 +11,24 @@ import { useTranslation } from 'react-i18next';
 
 
 const Project = () => {
-    const [t,i18n] = useTranslation('project');
+    const [t,i18n] = useTranslation(['error', 'project']);
     const [projects, setProjects] =  useState([]);
 
     useEffect(() => {
-        getProjects()
+        getProjects(i18n.language)
             .then( res => {
                 setProjects(res.data.projects);
             })
             .catch( err => {
-                console.log("there was an error: " + err);
+                console.log(t('project:project.title'))
+                console.log(t('error:error.api-request-error') + err);
             });
-    }, [setProjects]);
+    }, [setProjects, i18n.language]);
 
 
     return (
         <div className="project-container" id="projects">
-            <p className='project-p'>{t('project.title')}</p>
+            <p className='project-p'>{t('project:project.title')}</p>
             
                 <Swiper
                     slidesPerView={5}
