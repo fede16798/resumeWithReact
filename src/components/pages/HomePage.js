@@ -4,7 +4,7 @@ import AboutMe from '../aboutMe/AboutMe.js';
 import Skills from '../skills/Skills.js';
 import Projects from '../projects/Project.js';
 
-const HomePage = () => {
+const HomePage = () => {	
 	return (
 		<>
 			<Header />

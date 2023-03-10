@@ -1,0 +1,9 @@
+{
+    "projects" : [
+        {"id": 0, "name": "Proyeycto con Spring boot", "image": "./resume-image.jpg", "link": "https://github.com/fede16798/BBVA-Spring-Squad3"},
+        {"id": 1, "name": "Repositorio de películas", "image": "./resume-image.jpg", "link": "https://github.com/fede16798/ChallengeAlkemyReact"},
+        {"id": 2, "name": "Consumo de Api", "image": "./resume-image.jpg", "link": "https://github.com/fede16798/consumingCryptocurrencyApi"},
+        {"id": 3, "name": "Api Rest Full", "image": "./resume-image.jpg", "link": "https://github.com/fede16798/apiRestFulSpringBoot"},
+        {"id": 4, "name": "Cirrículum Vitae", "image": "./resume-image.jpg", "link": "https://github.com/fede16798/resumeWithReact"}
+    ]
+}

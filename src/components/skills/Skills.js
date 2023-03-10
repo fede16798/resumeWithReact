@@ -5,34 +5,47 @@ import { useState, useEffect } from 'react';
 import { FaReact, FaDocker, FaJava, FaPython } from 'react-icons/fa';
 import { SiSpringboot, SiMysql } from 'react-icons/si';
 import { DiJavascript1 } from 'react-icons/di';
-import { getText, getSkills } from '../../services/Skills.service.js';
+import { getSkills } from '../../services/Skills.service.js';
+import i18next from 'i18next';
+import { useTranslation } from 'react-i18next';
 
 const Skills = () => {
+    const { i18n } = useTranslation();
 
     let skillsIcons = [<FaReact />, <DiJavascript1 />, <FaJava />, <SiSpringboot />, <FaPython />, <FaDocker />, <SiMysql />]
     
     const [skills, setSkills] = useState([]);
     const [text, setText] = useState("");
+    const [skillId, setSkillId] = useState(0);
 
     useEffect(() => {
-        getSkills()
+        getSkills(i18next.language)
             .then(res => {
-                setSkills(res.data)
-                setText(res.data[0].description)
+                setSkills(res.data);
+                setText(res.data[0].description);
             })
             .catch(err => {
-                console.log("HUBO un error")
+                console.log("HUBO un error");
             })
-    }, [setSkills])
+    }, [setSkills]);
+
+    useEffect(() => {
+        callGetSkillsAndSetId(skillId);
+    }, [i18n.language])
 
     const handleClick = ({ id }) => {
-        getText() 
-            .then( res => {
-                setText(res.data[id].description);
-            })
-            .catch ( err => {
-                console.log("HUBO UN ERROR")
-            })
+        setSkillId(id);
+        callGetSkillsAndSetId(id);
+    }
+
+    const callGetSkillsAndSetId = (id) => {
+        getSkills(i18next.language)
+        .then( res => {
+            setText(res.data[id].description);
+        })
+        .catch ( err => {
+            console.log("HUBO UN ERROR");
+        })
     }
 
     return (

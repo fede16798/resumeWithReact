@@ -4,8 +4,11 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import ArrowDropDownRoundedIcon from '@mui/icons-material/ArrowDropDownRounded';
 import Typewriter from "typewriter-effect";
 import { Link } from 'react-scroll';
+import { useTranslation } from 'react-i18next';
 
 const Presentation = () => {
+
+  const [t,i18n] = useTranslation('presentation');
 
   return (
     <div className="presentation-container">
@@ -21,7 +24,7 @@ const Presentation = () => {
         }}
       />
      </h1>
-      <p className="presentation-p">Fullstack Developer</p>
+      <p className="presentation-p">{t('presentation.position')}</p>
       <div className="icons-container">
           <a href="https://www.linkedin.com/in/federico-martin-amico" rel="noreferrer" target="_blank" className='icons-container__a'> 
             <LinkedInIcon sx={{fontSize: 52}} className='icons-container__icon' /> 
