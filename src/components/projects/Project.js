@@ -8,7 +8,7 @@ import 'swiper/css';
 
 import { getProjects } from '../../services/Projects.service';
 import { useTranslation } from 'react-i18next';
-
+import swal from 'sweetalert';
 
 const Project = () => {
     const [t,i18n] = useTranslation(['error', 'project']);
@@ -20,8 +20,8 @@ const Project = () => {
                 setProjects(res.data.projects);
             })
             .catch( err => {
-                console.log(t('project:project.title'))
-                console.log(t('error:error.api-request-error') + err);
+                let info = (i18n.language == 'en' ? 'projects' : 'proyectos');
+                swal(t('error.title'), t('error.api-request-error', {data: info}), "error");
             });
     }, [setProjects, i18n.language]);
 
