@@ -2,9 +2,9 @@ import axios from 'axios';
 
 const getProjects = async (language) => {
     if (language == 'en') {
-        return await axios.get('./projectsEn.json');
+        return await axios.get('./projectsEnsss.json');
     } else {
-        return await axios.get('./projectsEs.json');
+        return await axios.get('./projectsEssss.json');
     }
 }
 

@@ -1,5 +1,6 @@
 {
     "error": {
-        "api-request-error" : "There was an error trying to get the information "
+        "title": "Something went Wrong",
+        "api-request-error" : "There was an error trying to get the {{data}} information"
     }
 }

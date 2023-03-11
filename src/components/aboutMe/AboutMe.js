@@ -4,6 +4,7 @@ import Modal from '../modal/Modal.js';
 import './AboutMe.css';
 import resumeImg from '../../assets/resume-image.jpg';
 import { useTranslation } from 'react-i18next';
+import swal from 'sweetalert';
 
 const AboutMe = () => {
   const [t,i18n] = useTranslation('aboutMe');
@@ -12,8 +13,8 @@ const AboutMe = () => {
   const { register, formState: {errors}, setValue, handleSubmit } = useForm();
 
   const onSubmit = ( data ) => {
-    console.log(data);  
-    cleanForm();
+    console.log(data);
+    confirmEmail();
   }
 
   const handleClick = () => {
@@ -26,6 +27,21 @@ const AboutMe = () => {
     setValue('email', '');
     setValue('subject', '');
     setValue('message', '');
+  }
+
+  const confirmEmail = () => {
+    swal({
+      title: "Send Email",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        swal("Congrats", "Your email was sent","success");
+        cleanForm();
+      }
+    });
   }
 
   return (

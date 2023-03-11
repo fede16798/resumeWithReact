@@ -8,9 +8,11 @@ import { DiJavascript1 } from 'react-icons/di';
 import { getSkills } from '../../services/Skills.service.js';
 import i18next from 'i18next';
 import { useTranslation } from 'react-i18next';
+import swal from 'sweetalert';
+
 
 const Skills = () => {
-    const { i18n } = useTranslation();
+    const [t,i18n] = useTranslation('error');
 
     let skillsIcons = [<FaReact />, <DiJavascript1 />, <FaJava />, <SiSpringboot />, <FaPython />, <FaDocker />, <SiMysql />]
     
@@ -25,7 +27,8 @@ const Skills = () => {
                 setText(res.data[0].description);
             })
             .catch(err => {
-                console.log("HUBO un error");
+                let info = (i18n.language == 'en' ? 'skills' : 'habilidades');
+                swal(t('error.title'), t('error.api-request-error', {data: info}), "error");
             })
     }, [setSkills]);
 
@@ -44,7 +47,8 @@ const Skills = () => {
             setText(res.data[id].description);
         })
         .catch ( err => {
-            console.log("HUBO UN ERROR");
+            let info = (i18n.language == 'en' ? 'skills' : 'habilidades');
+            swal(t('error.title'), t('error.api-request-error', {data: info}), "error");
         })
     }
 
