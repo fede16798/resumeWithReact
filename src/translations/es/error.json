@@ -1,6 +1,7 @@
 {
     "error" :{
         "title": "Algo anduvo mal",
-        "api-request-error" : "Ocurrió un error al tratar de obtener la información de {{data}}"
+        "api-request-error" : "Ocurrió un error al tratar de obtener la información de {{data}}",
+        "email-error": "Ocurrió un error al tratar de enviar el mail. Prueba luego, por favor"
     }
 }

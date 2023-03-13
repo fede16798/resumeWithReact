@@ -1,19 +1,21 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import Modal from '../modal/Modal.js';
 import './AboutMe.css';
 import resumeImg from '../../assets/resume-image.jpg';
 import { useTranslation } from 'react-i18next';
 import swal from 'sweetalert';
+import emailjs from '@emailjs/browser';
 
 const AboutMe = () => {
-  const [t,i18n] = useTranslation('aboutMe');
+  const [t,i18n] = useTranslation(['aboutMe', "error"]);
 
   const [showModal, setShowModal] = useState(false);
   const { register, formState: {errors}, setValue, handleSubmit } = useForm();
+  const form = useRef();
 
-  const onSubmit = ( data ) => {
-    console.log(data);
+  const onSubmit = ( e ) => {
+    e.preventDefault();
     confirmEmail();
   }
 
@@ -23,8 +25,8 @@ const AboutMe = () => {
 
   const cleanForm = () => {
     setShowModal(false);
-    setValue('name', '');
-    setValue('email', '');
+    setValue('user_name', '');
+    setValue('user_email', '');
     setValue('subject', '');
     setValue('message', '');
   }
@@ -38,10 +40,19 @@ const AboutMe = () => {
     })
     .then((willDelete) => {
       if (willDelete) {
-        swal("Congrats", "Your email was sent","success");
+        sendEmail();
         cleanForm();
       }
     });
+  }
+
+  const sendEmail = () => {
+   emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, form.current, process.env.REACT_APP_PUBLIC_KEY)
+      .then(() => {
+        swal(t("modal.email-success"), t("modal.email-success-message"),"success");
+      }, (err) => {
+        swal(t("error:error.title"), t("error:error.email-error"),"error");
+      });
   }
 
   return (
@@ -79,10 +90,10 @@ const AboutMe = () => {
       cleanForm={() => cleanForm()}
       className='modal-form'
     >
-      <form className='form-container' onSubmit={handleSubmit(onSubmit)}>
+      <form className='form-container' ref={form} onSubmit={handleSubmit(onSubmit)}>
         <section className='form-section'>
           <label className='form-section__label'>{t('modal.name')}</label>
-          <input className='form-section__input' type="text" {...register('name', {
+          <input className='form-section__input' type="text" {...register('user_name', {
               required: true,
               minLength: 3,
               maxLength: 50
@@ -91,12 +102,12 @@ const AboutMe = () => {
           </input>
         </section>
 
-        {errors.name?.type === 'required' && <p className='form-error'>{t('modal.error-required')}</p>}
-        {(errors.name?.type === 'maxLength' || errors.name?.type === 'minLength' )&& <p className='form-error'>{t('modal.invalid-lenght', {field: 'name', minimun: '3', maximun: '50'})}</p>}
+        {errors.user_name?.type === 'required' && <p className='form-error'>{t('modal.error-required')}</p>}
+        {(errors.user_name?.type === 'maxLength' || errors.user_name?.type === 'minLength' )&& <p className='form-error'>{t('modal.invalid-lenght', {field: 'name', minimun: '3', maximun: '50'})}</p>}
         
         <section className='form-section'>
           <label className='form-section__label'>{t('modal.email')}</label>
-          <input className='form-section__input' type="email" {...register('email', {
+          <input className='form-section__input' type="email" {...register('user_email', {
               required: true,
               pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/i,
               minLength: 10,
@@ -106,9 +117,9 @@ const AboutMe = () => {
           </input>
         </section>
 
-        {errors.email?.type === 'required' && <p className='form-error'>{t('modal.error-required')}</p>}
-        {errors.email?.type === 'pattern' && <p className='form-error'>{t('modal.invalid-format')}</p>}
-        {(errors.email?.type === 'maxLength' || errors.name?.type === 'minLength' )&& <p className='form-error'>{t('modal.invalid-lenght', {field: 'email', minimun: '10', maximun: '60'})}</p>}
+        {errors.user_email?.type === 'required' && <p className='form-error'>{t('modal.error-required')}</p>}
+        {errors.user_email?.type === 'pattern' && <p className='form-error'>{t('modal.invalid-format')}</p>}
+        {(errors.user_email?.type === 'maxLength' || errors.name?.type === 'minLength' )&& <p className='form-error'>{t('modal.invalid-lenght', {field: 'user_email', minimun: '10', maximun: '60'})}</p>}
 
         <section className='form-section'>
           <label className='form-section__label'>{t('modal.subject')}</label>

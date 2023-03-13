@@ -8,13 +8,15 @@
     "modal": {
         "title": "Contact me",
         "name": "Name",
-        "email": "Email",
+        "email": "Your Email",
         "subject": "Subject",
         "message": "Message",
         "send-email": "Send Email",
         "error-required": "The field is required",
         "invalid-format": "The email format is not valid",
         "invalid-lenght": "The lenght of the {{field}} field must be between {{minimun}} and {{maximun}}",
-        "invalid-minimun-lenght": "The lenght of the {{field}} field must be {{minimun}} or more"
+        "invalid-minimun-lenght": "The lenght of the {{field}} field must be {{minimun}} or more",
+        "email-success": "Congrats",
+        "email-success-message": "Your email was sent"
     }
 }
