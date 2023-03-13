@@ -1,6 +1,7 @@
 {
     "error": {
         "title": "Something went Wrong",
-        "api-request-error" : "There was an error trying to get the {{data}} information"
+        "api-request-error" : "There was an error trying to get the {{data}} information",
+        "email-error": "There was an error trying to send the email. Try later, please"
     }
 }

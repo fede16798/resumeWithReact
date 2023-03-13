@@ -9,13 +9,15 @@
     "modal": {
         "title": "Contáctame",
         "name": "Nombre",
-        "email": "Mail",
+        "email": "Tu Mail",
         "subject": "Asunto",
         "message": "Mensaje",
         "send-email": "Enviar Mail",
         "error-required": "El campo es requerido",
         "invalid-format": "El formato del mail no es válido",
         "invalid-lenght": "El tamaño del campo {{field}} debe estar entre {{minumin}} y {{maximun}}",
-        "invalid-minimun-lenght": "El tamaño del campo {{field}} debe ser {{minimun}} o más"
+        "invalid-minimun-lenght": "El tamaño del campo {{field}} debe ser {{minimun}} o más",
+        "email-success": "Genial",
+        "email-success-message": "Tu mail fue enviado exitosamente"
     }
 }
