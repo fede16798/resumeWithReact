@@ -36,7 +36,6 @@ const Header = () => {
                             {t('header.my-projects')}
                         </Link>
                     </li>
-                    <li className='nav-ul__li'>{t('header.contact')}</li>
                 </ul>
             </nav>
         </div>

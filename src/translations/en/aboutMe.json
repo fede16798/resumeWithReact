@@ -17,6 +17,6 @@
         "invalid-lenght": "The lenght of the {{field}} field must be between {{minimun}} and {{maximun}}",
         "invalid-minimun-lenght": "The lenght of the {{field}} field must be {{minimun}} or more",
         "email-success": "Congrats",
-        "email-success-message": "Your email was sent"
+        "emaill-success-message": "Your email was sent"
     }
 }

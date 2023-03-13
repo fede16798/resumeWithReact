@@ -2,7 +2,6 @@
     "header": {
         "about-me": "Sobre Mi",
         "skills": "Habilidades",
-        "my-projects": "Mis Proyectos",
-        "contact": "Contacto"
+        "my-projects": "Mis Proyectos"
     }
 }
