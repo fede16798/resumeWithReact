@@ -48,3 +48,16 @@
 .arrow:hover {
     transform: scale(1.5);
 }
+
+@media only screen and (max-width: 768px) { 
+    .presentation-p {
+        width: auto;
+        letter-spacing: 2px;
+    }
+}
+
+@media only screen and (max-width: 500px) { 
+    .icons-container {
+        width: 10rem;
+    }
+}

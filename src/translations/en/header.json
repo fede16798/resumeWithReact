@@ -2,7 +2,6 @@
     "header": {
         "about-me": "About Me",
         "skills": "Skills",
-        "my-projects": "My Projects",
-        "contact": "Contact"
+        "my-projects": "My Projects"
     }
 }

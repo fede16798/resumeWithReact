@@ -13,6 +13,7 @@ import swal from 'sweetalert';
 const Project = () => {
     const [t,i18n] = useTranslation(['error', 'project']);
     const [projects, setProjects] =  useState([]);
+    const [verticalDirection, setVerticalDirection] = useState("vertical");
 
     useEffect(() => {
         getProjects(i18n.language)
@@ -20,25 +21,43 @@ const Project = () => {
                 setProjects(res.data.projects);
             })
             .catch( err => {
-                let info = (i18n.language == 'en' ? 'projects' : 'proyectos');
+                let info = (i18n.language === 'en' ? 'projects' : 'proyectos');
                 swal(t('error.title'), t('error.api-request-error', {data: info}), "error");
             });
     }, [setProjects, i18n.language]);
 
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth < 501) {
+                setVerticalDirection('vertical');
+            } else {
+                setVerticalDirection('horizontal');
+            }
+        };
+        handleResize(); 
+
+        window.addEventListener('resize', handleResize);
+        return () => {
+          window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
+    const swiperParams = {
+        slidesPerView: 5,
+        spaceBetween: 0,
+        direction: verticalDirection,
+        pagination: {
+            clickable: true,
+        },
+        modules: [Pagination]
+    }
 
     return (
         <div className="project-container" id="projects">
             <p className='project-p'>{t('project:project.title')}</p>
             
-                <Swiper
-                    slidesPerView={5}
-                    spaceBetween={0}
-                    pagination={{
-                    clickable: true,
-                    }}
-                    modules={[Pagination]}
-                    className='project-mySwiper'
-                >	
+
+                <Swiper {...swiperParams} className='project-mySwiper' >	
                 {
                     projects.map((project) => {
                         return(
@@ -55,8 +74,6 @@ const Project = () => {
                 }
                 </Swiper>
         </div>
-           
-
     )
 }
 
