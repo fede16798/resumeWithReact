@@ -14,8 +14,7 @@ const AboutMe = () => {
   const { register, formState: {errors}, setValue, handleSubmit } = useForm();
   const form = useRef();
 
-  const onSubmit = ( e ) => {
-    e.preventDefault();
+  const onSubmit = (  e ) => {
     confirmEmail();
   }
 
@@ -131,7 +130,7 @@ const AboutMe = () => {
         </section>
 
         {errors.subject?.type === 'required' && <p className='form-error'>{t('modal.error-required')}</p>}
-        {errors.subject?.type === 'minLength' && <p className='form-error'>{t('modal.invalid-minimun-lenght', {field: 'email', minimun: '10'})}</p>}
+        {errors.subject?.type === 'minLength' && <p className='form-error'>{t('modal.invalid-minimun-lenght', {field: 'subject', minimun: '10'})}</p>}
 
         <section className='form-section'>
           <label className='form-section__label'>{t('modal.message')}</label>
@@ -143,7 +142,7 @@ const AboutMe = () => {
         </section>
 
         {errors.message?.type === 'required' && <p className='form-error'>{t('modal.error-required')}</p>}
-        {errors.message?.type === 'minLength' && <p className='form-error'>{t('modal.invalid-minimun-lenght', {field: 'email', minimun: '15'})}</p>}
+        {errors.message?.type === 'minLength' && <p className='form-error'>{t('modal.invalid-minimun-lenght', {field: 'message', minimun: '15'})}</p>}
 
         <button type="submit" className='form-button'>{t('modal.send-email')}</button>
       </form>
