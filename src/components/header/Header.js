@@ -12,8 +12,8 @@ const Header = () => {
     return (
         <div className='header-container'>
             <section className='header-section'>
-                <button className='header-section__button'><img src={EN_IMG} className='header-section__img'  onClick={() => i18n.changeLanguage("en")}/></button>
-                <button className='header-section__button'><img src={ES_IMG} className='header-section__img' onClick={() => i18n.changeLanguage("es")}/></button>
+                <button className='header-section__button'><img src={EN_IMG} className='header-section__img' alt='English language icon' onClick={() => i18n.changeLanguage("en")}/></button>
+                <button className='header-section__button'><img src={ES_IMG} className='header-section__img' alt='Spanish language icon' onClick={() => i18n.changeLanguage("es")}/></button>
             </section>
 
             <nav className='nav'>

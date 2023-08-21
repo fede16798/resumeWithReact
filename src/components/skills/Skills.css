@@ -69,7 +69,7 @@
 
     .skills-section {
         width: 60vw;
-        margin: 2rem;
+        margin: 1rem;
         padding: 1rem;
     }
     
@@ -80,5 +80,22 @@
 
     .skills-section__p {
         font-size: .9rem;
+    }
+}
+
+@media only screen and (max-width: 500px) { 
+    .skills-container {
+        flex-direction: column;
+    }
+
+    .skills-ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding-left: 0;
+
+    }
+
+    .skills-section {
+        width: auto;
     }
 }
