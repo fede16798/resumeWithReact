@@ -78,9 +78,16 @@
 @media only screen and (max-width: 500px) { 
     .header-container {
         flex-direction: column;
+        padding-top: 1rem;
     }
 
     .header-section {
         width: 25vw;
+    }
+
+    .nav-ul {
+        margin-right: 1rem;
+        margin-left: 1rem;
+        width: 100vw;
     }
 }

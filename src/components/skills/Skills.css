@@ -22,6 +22,7 @@
 
 .skills-ul__li {
     margin: 0.5rem 1rem;
+    white-space: nowrap;
 }
 
 .skills-ul__p {

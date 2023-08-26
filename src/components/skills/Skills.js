@@ -2,7 +2,7 @@ import './Skills.css';
 import SkillItem from './SkillItem';
 import { useState, useEffect } from 'react';
 
-import { FaReact, FaDocker, FaJava, FaPython } from 'react-icons/fa';
+import { FaReact, FaDocker, FaJava, FaPython, FaBrain } from 'react-icons/fa';
 import { SiSpringboot, SiMysql } from 'react-icons/si';
 import { DiJavascript1 } from 'react-icons/di';
 import { getSkills } from '../../services/Skills.service.js';
@@ -14,7 +14,7 @@ import swal from 'sweetalert';
 const Skills = () => {
     const [t,i18n] = useTranslation('error');
 
-    let skillsIcons = [<FaReact />, <DiJavascript1 />, <FaJava />, <SiSpringboot />, <FaPython />, <FaDocker />, <SiMysql />]
+    let skillsIcons = [<FaReact />, <DiJavascript1 />, <FaJava />, <SiSpringboot />, <FaPython />, <FaDocker />, <SiMysql />, <FaBrain />]
     
     const [skills, setSkills] = useState([]);
     const [text, setText] = useState("");

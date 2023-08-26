@@ -167,3 +167,14 @@
         font-size: .9rem;
     }
 }
+
+@media only screen and (max-width: 500px) { 
+    .form-section {
+        flex-direction: column;
+    }
+    
+    .form-section__input {
+        margin-top: .5rem;
+        width: auto;
+    }
+}
