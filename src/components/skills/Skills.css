@@ -55,6 +55,7 @@
 
 .skills-section__p {
     color: #fff;
+    word-wrap: break-word;
 }
 
 @media only screen and (max-width: 768px) { 

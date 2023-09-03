@@ -27,7 +27,7 @@ const Skills = () => {
                 setText(res.data[0].description);
             })
             .catch(err => {
-                let info = (i18n.language == 'en' ? 'skills' : 'habilidades');
+                let info = (i18n.language === 'en' ? 'skills' : 'habilidades');
                 swal(t('error.title'), t('error.api-request-error', {data: info}), "error");
             })
     }, [setSkills]);
@@ -47,7 +47,7 @@ const Skills = () => {
             setText(res.data[id].description);
         })
         .catch ( err => {
-            let info = (i18n.language == 'en' ? 'skills' : 'habilidades');
+            let info = (i18n.language === 'en' ? 'skills' : 'habilidades');
             swal(t('error.title'), t('error.api-request-error', {data: info}), "error");
         })
     }
